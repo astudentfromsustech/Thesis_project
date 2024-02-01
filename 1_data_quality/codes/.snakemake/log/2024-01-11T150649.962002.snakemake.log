@@ -1,0 +1,256 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+hic_to_cool             12
+take_targetChroms       12
+total                   25
+
+Select jobs to execute...
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS005D.hic
+    output: ../data/cool_10k/CDS005D_10000.cool
+    jobid: 4
+    reason: Missing output files: ../data/cool_10k/CDS005D_10000.cool
+    wildcards: sample=CDS005D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS005D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS005D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS007D.hic
+    output: ../data/cool_10k/CDS007D_10000.cool
+    jobid: 5
+    reason: Missing output files: ../data/cool_10k/CDS007D_10000.cool
+    wildcards: sample=CDS007D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS007D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS007D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS010D.hic
+    output: ../data/cool_10k/CDS010D_10000.cool
+    jobid: 7
+    reason: Missing output files: ../data/cool_10k/CDS010D_10000.cool
+    wildcards: sample=CDS010D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS010D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS010D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS013D.hic
+    output: ../data/cool_10k/CDS013D_10000.cool
+    jobid: 9
+    reason: Missing output files: ../data/cool_10k/CDS013D_10000.cool
+    wildcards: sample=CDS013D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS013D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS013D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS016D.hic
+    output: ../data/cool_10k/CDS016D_10000.cool
+    jobid: 11
+    reason: Missing output files: ../data/cool_10k/CDS016D_10000.cool
+    wildcards: sample=CDS016D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS016D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS016D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS002D.hic
+    output: ../data/cool_10k/CDS002D_10000.cool
+    jobid: 2
+    reason: Missing output files: ../data/cool_10k/CDS002D_10000.cool
+    wildcards: sample=CDS002D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS002D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS002D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS004D.hic
+    output: ../data/cool_10k/CDS004D_10000.cool
+    jobid: 3
+    reason: Missing output files: ../data/cool_10k/CDS004D_10000.cool
+    wildcards: sample=CDS004D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS004D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS004D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS008D.hic
+    output: ../data/cool_10k/CDS008D_10000.cool
+    jobid: 6
+    reason: Missing output files: ../data/cool_10k/CDS008D_10000.cool
+    wildcards: sample=CDS008D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS008D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS008D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS011D.hic
+    output: ../data/cool_10k/CDS011D_10000.cool
+    jobid: 8
+    reason: Missing output files: ../data/cool_10k/CDS011D_10000.cool
+    wildcards: sample=CDS011D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS011D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS011D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS014D.hic
+    output: ../data/cool_10k/CDS014D_10000.cool
+    jobid: 10
+    reason: Missing output files: ../data/cool_10k/CDS014D_10000.cool
+    wildcards: sample=CDS014D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS014D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS014D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS017D.hic
+    output: ../data/cool_10k/CDS017D_10000.cool
+    jobid: 12
+    reason: Missing output files: ../data/cool_10k/CDS017D_10000.cool
+    wildcards: sample=CDS017D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS017D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS017D.cool -r 10000
+
+[Thu Jan 11 15:06:50 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS001D.hic
+    output: ../data/cool_10k/CDS001D_10000.cool
+    jobid: 1
+    reason: Missing output files: ../data/cool_10k/CDS001D_10000.cool
+    wildcards: sample=CDS001D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS001D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS001D.cool -r 10000
+[Thu Jan 11 15:06:51 2024]
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 7
+    input: ../data/hic/CDS010D.hic
+    output: ../data/cool_10k/CDS010D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS010D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS010D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule hic_to_cool:
+    jobid: 5
+    input: ../data/hic/CDS007D.hic
+    output: ../data/cool_10k/CDS007D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS007D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS007D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 4
+    input: ../data/hic/CDS005D.hic
+    output: ../data/cool_10k/CDS005D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS005D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS005D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 9
+    input: ../data/hic/CDS013D.hic
+    output: ../data/cool_10k/CDS013D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS013D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS013D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 2
+    input: ../data/hic/CDS002D.hic
+    output: ../data/cool_10k/CDS002D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS002D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS002D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 3
+    input: ../data/hic/CDS004D.hic
+    output: ../data/cool_10k/CDS004D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS004D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS004D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 6
+    input: ../data/hic/CDS008D.hic
+    output: ../data/cool_10k/CDS008D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS008D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS008D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 8
+    input: ../data/hic/CDS011D.hic
+    output: ../data/cool_10k/CDS011D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS011D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS011D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 10
+    input: ../data/hic/CDS014D.hic
+    output: ../data/cool_10k/CDS014D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS014D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS014D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 12
+    input: ../data/hic/CDS017D.hic
+    output: ../data/cool_10k/CDS017D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS017D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS017D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 11
+    input: ../data/hic/CDS016D.hic
+    output: ../data/cool_10k/CDS016D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS016D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS016D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:06:51 2024]
+Error in rule hic_to_cool:
+    jobid: 1
+    input: ../data/hic/CDS001D.hic
+    output: ../data/cool_10k/CDS001D_10000.cool
+    shell:
+        hicConvertFormat -m ../data/hic/CDS001D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS001D.cool -r 10000
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-01-11T150649.962002.snakemake.log

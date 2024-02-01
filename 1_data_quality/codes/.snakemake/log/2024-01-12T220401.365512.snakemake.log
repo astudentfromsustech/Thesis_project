@@ -1,0 +1,257 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+all                         1
+hicRep_calculate_scc      144
+normalize_smallest          1
+take_targetChroms          12
+total                     158
+
+Select jobs to execute...
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS008D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS008D_10000_targetChroms.cool
+    jobid: 18
+    reason: Code has changed since last execution
+    wildcards: sample=CDS008D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS008D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS008D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS010D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS010D_10000_targetChroms.cool
+    jobid: 19
+    reason: Code has changed since last execution
+    wildcards: sample=CDS010D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS010D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS010D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS013D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS013D_10000_targetChroms.cool
+    jobid: 21
+    reason: Code has changed since last execution
+    wildcards: sample=CDS013D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS013D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS013D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS016D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS016D_10000_targetChroms.cool
+    jobid: 23
+    reason: Code has changed since last execution
+    wildcards: sample=CDS016D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS016D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS016D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS001D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS001D_10000_targetChroms.cool
+    jobid: 13
+    reason: Code has changed since last execution
+    wildcards: sample=CDS001D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS001D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS001D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS004D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS004D_10000_targetChroms.cool
+    jobid: 15
+    reason: Code has changed since last execution
+    wildcards: sample=CDS004D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS004D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS004D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS007D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS007D_10000_targetChroms.cool
+    jobid: 17
+    reason: Code has changed since last execution
+    wildcards: sample=CDS007D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS007D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS007D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS011D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS011D_10000_targetChroms.cool
+    jobid: 20
+    reason: Code has changed since last execution
+    wildcards: sample=CDS011D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS011D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS011D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS014D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS014D_10000_targetChroms.cool
+    jobid: 22
+    reason: Code has changed since last execution
+    wildcards: sample=CDS014D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS014D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS014D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS017D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS017D_10000_targetChroms.cool
+    jobid: 24
+    reason: Code has changed since last execution
+    wildcards: sample=CDS017D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS017D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS017D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS002D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS002D_10000_targetChroms.cool
+    jobid: 14
+    reason: Code has changed since last execution
+    wildcards: sample=CDS002D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS002D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS002D_10000_targetChroms.cool
+
+[Fri Jan 12 22:04:02 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS005D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS005D_10000_targetChroms.cool
+    jobid: 16
+    reason: Code has changed since last execution
+    wildcards: sample=CDS005D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS005D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS005D_10000_targetChroms.cool
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 18
+    input: ../data/cool_10k/CDS008D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS008D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS008D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS008D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 19
+    input: ../data/cool_10k/CDS010D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS010D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS010D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS010D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 21
+    input: ../data/cool_10k/CDS013D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS013D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS013D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS013D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 15
+    input: ../data/cool_10k/CDS004D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS004D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS004D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS004D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 13
+    input: ../data/cool_10k/CDS001D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS001D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS001D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS001D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 17
+    input: ../data/cool_10k/CDS007D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS007D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS007D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS007D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 20
+    input: ../data/cool_10k/CDS011D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS011D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS011D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS011D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 22
+    input: ../data/cool_10k/CDS014D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS014D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS014D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS014D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 23
+    input: ../data/cool_10k/CDS016D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS016D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS016D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS016D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 24
+    input: ../data/cool_10k/CDS017D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS017D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS017D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS017D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 14
+    input: ../data/cool_10k/CDS002D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS002D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS002D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS002D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan 12 22:04:03 2024]
+Error in rule take_targetChroms:
+    jobid: 16
+    input: ../data/cool_10k/CDS005D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS005D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS005D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS005D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-01-12T220401.365512.snakemake.log

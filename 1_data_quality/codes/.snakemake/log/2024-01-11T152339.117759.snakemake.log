@@ -1,0 +1,330 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+hic_to_cool             12
+take_targetChroms       12
+total                   25
+
+Select jobs to execute...
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS005D.hic
+    output: ../data/cool_10k/CDS005D_10000.cool
+    jobid: 4
+    reason: Missing output files: ../data/cool_10k/CDS005D_10000.cool
+    wildcards: sample=CDS005D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS005D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS005D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS007D.hic
+    output: ../data/cool_10k/CDS007D_10000.cool
+    jobid: 5
+    reason: Missing output files: ../data/cool_10k/CDS007D_10000.cool
+    wildcards: sample=CDS007D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS007D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS007D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS010D.hic
+    output: ../data/cool_10k/CDS010D_10000.cool
+    jobid: 7
+    reason: Missing output files: ../data/cool_10k/CDS010D_10000.cool
+    wildcards: sample=CDS010D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS010D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS010D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS013D.hic
+    output: ../data/cool_10k/CDS013D_10000.cool
+    jobid: 9
+    reason: Missing output files: ../data/cool_10k/CDS013D_10000.cool
+    wildcards: sample=CDS013D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS013D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS013D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS016D.hic
+    output: ../data/cool_10k/CDS016D_10000.cool
+    jobid: 11
+    reason: Missing output files: ../data/cool_10k/CDS016D_10000.cool
+    wildcards: sample=CDS016D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS016D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS016D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS004D.hic
+    output: ../data/cool_10k/CDS004D_10000.cool
+    jobid: 3
+    reason: Missing output files: ../data/cool_10k/CDS004D_10000.cool
+    wildcards: sample=CDS004D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS004D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS004D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS008D.hic
+    output: ../data/cool_10k/CDS008D_10000.cool
+    jobid: 6
+    reason: Missing output files: ../data/cool_10k/CDS008D_10000.cool
+    wildcards: sample=CDS008D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS008D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS008D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS011D.hic
+    output: ../data/cool_10k/CDS011D_10000.cool
+    jobid: 8
+    reason: Missing output files: ../data/cool_10k/CDS011D_10000.cool
+    wildcards: sample=CDS011D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS011D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS011D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS014D.hic
+    output: ../data/cool_10k/CDS014D_10000.cool
+    jobid: 10
+    reason: Missing output files: ../data/cool_10k/CDS014D_10000.cool
+    wildcards: sample=CDS014D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS014D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS014D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS017D.hic
+    output: ../data/cool_10k/CDS017D_10000.cool
+    jobid: 12
+    reason: Missing output files: ../data/cool_10k/CDS017D_10000.cool
+    wildcards: sample=CDS017D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS017D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS017D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS002D.hic
+    output: ../data/cool_10k/CDS002D_10000.cool
+    jobid: 2
+    reason: Missing output files: ../data/cool_10k/CDS002D_10000.cool
+    wildcards: sample=CDS002D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS002D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS002D.cool -r 10000
+
+[Thu Jan 11 15:23:39 2024]
+rule hic_to_cool:
+    input: ../data/hic/CDS001D.hic
+    output: ../data/cool_10k/CDS001D_10000.cool
+    jobid: 1
+    reason: Missing output files: ../data/cool_10k/CDS001D_10000.cool
+    wildcards: sample=CDS001D
+    resources: tmpdir=/tmp
+
+hicConvertFormat -m ../data/hic/CDS001D.hic --inputFormat hic --outputFormat cool -o ../data/cool_10k/CDS001D.cool -r 10000
+[Thu Jan 11 15:23:42 2024]
+Finished job 11.
+1 of 25 steps (4%) done
+Select jobs to execute...
+
+[Thu Jan 11 15:23:42 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS016D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS016D_10000_targetChroms.cool
+    jobid: 23
+    reason: Missing output files: ../data/cool_10k_targetChroms/CDS016D_10000_targetChroms.cool; Input files updated by another job: ../data/cool_10k/CDS016D_10000.cool
+    wildcards: sample=CDS016D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS016D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS016D_10000_targetChroms.cool
+[Thu Jan 11 15:23:43 2024]
+Finished job 5.
+2 of 25 steps (8%) done
+[Thu Jan 11 15:23:43 2024]
+Finished job 12.
+3 of 25 steps (12%) done
+Select jobs to execute...
+
+[Thu Jan 11 15:23:43 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS007D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS007D_10000_targetChroms.cool
+    jobid: 17
+    reason: Missing output files: ../data/cool_10k_targetChroms/CDS007D_10000_targetChroms.cool; Input files updated by another job: ../data/cool_10k/CDS007D_10000.cool
+    wildcards: sample=CDS007D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS007D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS007D_10000_targetChroms.cool
+
+[Thu Jan 11 15:23:43 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS017D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS017D_10000_targetChroms.cool
+    jobid: 24
+    reason: Missing output files: ../data/cool_10k_targetChroms/CDS017D_10000_targetChroms.cool; Input files updated by another job: ../data/cool_10k/CDS017D_10000.cool
+    wildcards: sample=CDS017D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS017D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS017D_10000_targetChroms.cool
+[Thu Jan 11 15:23:43 2024]
+Finished job 6.
+4 of 25 steps (16%) done
+Select jobs to execute...
+
+[Thu Jan 11 15:23:43 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS008D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS008D_10000_targetChroms.cool
+    jobid: 18
+    reason: Missing output files: ../data/cool_10k_targetChroms/CDS008D_10000_targetChroms.cool; Input files updated by another job: ../data/cool_10k/CDS008D_10000.cool
+    wildcards: sample=CDS008D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS008D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS008D_10000_targetChroms.cool
+[Thu Jan 11 15:23:43 2024]
+Finished job 9.
+5 of 25 steps (20%) done
+Select jobs to execute...
+
+[Thu Jan 11 15:23:43 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS013D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS013D_10000_targetChroms.cool
+    jobid: 21
+    reason: Missing output files: ../data/cool_10k_targetChroms/CDS013D_10000_targetChroms.cool; Input files updated by another job: ../data/cool_10k/CDS013D_10000.cool
+    wildcards: sample=CDS013D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS013D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS013D_10000_targetChroms.cool
+[Thu Jan 11 15:23:43 2024]
+Finished job 4.
+6 of 25 steps (24%) done
+Select jobs to execute...
+
+[Thu Jan 11 15:23:43 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS005D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS005D_10000_targetChroms.cool
+    jobid: 16
+    reason: Missing output files: ../data/cool_10k_targetChroms/CDS005D_10000_targetChroms.cool; Input files updated by another job: ../data/cool_10k/CDS005D_10000.cool
+    wildcards: sample=CDS005D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS005D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS005D_10000_targetChroms.cool
+[Thu Jan 11 15:23:43 2024]
+Finished job 3.
+7 of 25 steps (28%) done
+Select jobs to execute...
+
+[Thu Jan 11 15:23:43 2024]
+rule take_targetChroms:
+    input: ../data/cool_10k/CDS004D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS004D_10000_targetChroms.cool
+    jobid: 15
+    reason: Missing output files: ../data/cool_10k_targetChroms/CDS004D_10000_targetChroms.cool; Input files updated by another job: ../data/cool_10k/CDS004D_10000.cool
+    wildcards: sample=CDS004D
+    resources: tmpdir=/tmp
+
+ hicAdjustMatrix -m ../data/cool_10k/CDS004D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS004D_10000_targetChroms.cool
+[Thu Jan 11 15:23:43 2024]
+Error in rule take_targetChroms:
+    jobid: 23
+    input: ../data/cool_10k/CDS016D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS016D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS016D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS016D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:23:43 2024]
+Error in rule take_targetChroms:
+    jobid: 17
+    input: ../data/cool_10k/CDS007D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS007D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS007D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS007D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:23:44 2024]
+Finished job 1.
+8 of 25 steps (32%) done
+[Thu Jan 11 15:23:44 2024]
+Error in rule take_targetChroms:
+    jobid: 24
+    input: ../data/cool_10k/CDS017D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS017D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS017D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS017D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:23:44 2024]
+Finished job 10.
+9 of 25 steps (36%) done
+[Thu Jan 11 15:23:44 2024]
+Error in rule take_targetChroms:
+    jobid: 18
+    input: ../data/cool_10k/CDS008D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS008D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS008D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS008D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:23:44 2024]
+[Thu Jan 11 15:23:44 2024]
+Error in rule take_targetChroms:
+    jobid: 21
+    input: ../data/cool_10k/CDS013D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS013D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS013D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS013D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule take_targetChroms:
+    jobid: 16
+    input: ../data/cool_10k/CDS005D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS005D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS005D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS005D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:23:44 2024]
+Error in rule take_targetChroms:
+    jobid: 15
+    input: ../data/cool_10k/CDS004D_10000.cool
+    output: ../data/cool_10k_targetChroms/CDS004D_10000_targetChroms.cool
+    shell:
+         hicAdjustMatrix -m ../data/cool_10k/CDS004D_10000.cool --action keep --chromosomes 2L 2R 3L 3R 4 X -o ../data/cool_10k_targetChroms/CDS004D_10000_targetChroms.cool
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Jan 11 15:23:45 2024]
+Finished job 7.
+10 of 25 steps (40%) done
+[Thu Jan 11 15:23:45 2024]
+Finished job 8.
+11 of 25 steps (44%) done
+[Thu Jan 11 15:23:45 2024]
+Finished job 2.
+12 of 25 steps (48%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-01-11T152339.117759.snakemake.log

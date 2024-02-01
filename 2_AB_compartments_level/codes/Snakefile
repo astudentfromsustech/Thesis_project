@@ -1,0 +1,25 @@
+samples = ['CDS001D', 'CDS002D', 'CDS004D', 'CDS005D', 'CDS007D', 'CDS008D']
+
+rule all:
+    input:
+        expand("../data/combined_cool_5k/{sample}_combined_5000.cool", sample=samples),
+        expand("../data/combined_cool_5k_targetChroms/{sample}_combined_5000_targetChroms.cool", sample=samples),
+
+
+rule hic_to_cool:
+    input:
+        "../data/combined_hic/{sample}_combined.hic"
+    output:
+        "../data/combined_cool_5k/{sample}_combined_5000.cool"
+    params:
+        output_name="../data/combined_cool_5k/{sample}_combined.cool"
+    shell:
+        "hicConvertFormat -m {input} --inputFormat hic --outputFormat cool -o {params.output_name} -r 5000"
+#
+rule take_targetChroms:
+    input:
+        "../data/combined_cool_5k/{sample}_combined_5000.cool"
+    output:
+        "../data/combined_cool_5k_targetChroms/{sample}_combined_5000_targetChroms.cool"
+    shell:
+        " hicAdjustMatrix -m {input} --action keep --chromosomes 2L 2R 3L 3R 4 X -o {output}"
