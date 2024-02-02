@@ -1,0 +1,42 @@
+samples = ['WT', 'HS']
+
+rule all:
+    input:
+        expand("../data/PNAS_data_S2_downsample/S2_cool_10k_targetChroms_downsample_10000000_normalize0_1/{sample}_combined_10k_targetChroms_downsample_10000000_normalize0_1.cool", sample=samples),
+        expand("../data/PNAS_data_S2_downsample/S2_cool_10k_targetChroms_downsample_10000000_normalize0_1_correctionKR_forNormalize0_1/{sample}_combined_10k_targetChroms_downsample_10000000_normalize0_1_correctionKR_forNormalize0_1.cool", sample=samples),
+        expand("../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_boundaries.bed", sample=samples),
+        expand("../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_boundaries.gff", sample=samples),
+        expand("../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_domains.bed", sample=samples),
+        expand("../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_score.bedgraph", sample=samples),
+        expand("../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_tad_score.bm", sample=samples),
+        expand("../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_zscore_matrix.cool", sample=samples),
+
+
+rule normalize_0_1:
+    input:
+        "../data/PNAS_data_S2_downsample/S2_cool_10k_targetChroms_downsample_10000000/{sample}_combined_10k_targetChroms_downsample_10000000.cool"
+    output:
+        "../data/PNAS_data_S2_downsample/S2_cool_10k_targetChroms_downsample_10000000_normalize0_1/{sample}_combined_10k_targetChroms_downsample_10000000_normalize0_1.cool"
+    shell:
+        "hicNormalize -m {input} --normalize norm_range -o {output}"
+
+rule correction_KR_forNormalize0_1:
+    input:
+        "../data/PNAS_data_S2_downsample/S2_cool_10k_targetChroms_downsample_10000000_normalize0_1/{sample}_combined_10k_targetChroms_downsample_10000000_normalize0_1.cool"
+    output:
+        "../data/PNAS_data_S2_downsample/S2_cool_10k_targetChroms_downsample_10000000_normalize0_1_correctionKR_forNormalize0_1/{sample}_combined_10k_targetChroms_downsample_10000000_normalize0_1_correctionKR_forNormalize0_1.cool"
+    shell:
+        "hicCorrectMatrix correct -m {input} --correctionMethod KR --outFileName {output}"
+        
+rule hicFindTADs_for_Normalize0_1:
+    input:
+        "../data/PNAS_data_S2_downsample/S2_cool_10k_targetChroms_downsample_10000000_normalize0_1_correctionKR_forNormalize0_1/{sample}_combined_10k_targetChroms_downsample_10000000_normalize0_1_correctionKR_forNormalize0_1.cool"
+    output:
+        "../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_boundaries.bed",
+        "../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_boundaries.gff",
+        "../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_domains.bed",
+        "../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_score.bedgraph",
+        "../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_tad_score.bm",
+        "../results/PNAS_data_S2_downsample_results/{sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_zscore_matrix.cool"
+    shell:
+        "hicFindTADs -m {input} --outPrefix ../results/PNAS_data_S2_downsample_results/{wildcards.sample}_combined_10k_targetChroms_downsample_10000000_min30k_max100k_step10k_thresh0.01_delta0.01_dfr --minDepth 30000 --maxDepth 100000 --step 10000 --thresholdComparisons 0.01 --delta 0.01 --correctForMultipleTesting fdr -p 32"

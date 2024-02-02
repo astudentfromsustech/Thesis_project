@@ -1,0 +1,71 @@
+samples = ['CDS001D', 'CDS002D', 'CDS004D', 'CDS005D', 'CDS007D', 'CDS008D']
+
+rule all:
+    input:
+        expand("../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k/{sample}_combined_10000.cool", sample=samples),
+        expand("../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms/{sample}_combined_10000_targetChroms.cool", sample=samples),
+        expand("../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms_normalizeSmallest/{sample}_combined_10000_targetChroms_normalizeSmallest.cool", sample=samples),
+#         expand("../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms_normalize0_1_correctionKR_forNormalize0_1/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR.cool", sample=samples),
+#         expand("../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_boundaries.bed", sample=samples),
+#         expand("../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_boundaries.gff", sample=samples),
+#         expand("../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_domains.bed", sample=samples),
+#         expand("../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_score.bedgraph", sample=samples),
+#         expand("../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_tad_score.bm", sample=samples),
+#         expand("../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_zscore_matrix.cool", sample=samples)
+
+rule hic_to_cool:
+    input:
+        "../data/home_data_V2_normalizeSmallest_normalize0_1/combined_hic/{sample}_combined.hic"
+    output:
+        "../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k/{sample}_combined_10000.cool"
+    params:
+        output_name="../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k/{sample}_combined.cool"
+    shell:
+        "hicConvertFormat -m {input} --inputFormat hic --outputFormat cool -o {params.output_name} -r 10000"
+
+rule take_targetChroms:
+    input:
+        "../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k/{sample}_combined_10000.cool"
+    output:
+        "../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms/{sample}_combined_10000_targetChroms.cool"
+    shell:
+        "hicAdjustMatrix -m {input} --action keep --chromosomes 2L 2R 3L 3R 4 X -o {output}"
+
+rule normalizeSmallest:
+    input:
+        cool_files=expand("../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms/{sample}_combined_10000_targetChroms.cool", sample=samples)
+    output:
+        normalizeSmallest_files=expand("../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms_normalizeSmallest/{sample}_combined_10000_targetChroms_normalizeSmallest.cool", sample=samples)
+    shell:
+        "hicNormalize -m {input.cool_files} --normalize smallest -o {output.normalizeSmallest_files}"
+
+# rule normalize_0_1:
+#     input:
+#         "../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms/{sample}_combined_10000_targetChroms.cool"
+#     output:
+#         "../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms_normalize0_1/{sample}_combined_10000_targetChroms_normalize0_1.cool"
+#     shell:
+#         "hicNormalize -m {input} --normalize norm_range -o {output}"
+# #
+# rule correction_KR_forNormalize0_1:
+#     input:
+#         "../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms_normalize0_1/{sample}_combined_10000_targetChroms_normalize0_1.cool"
+#     output:
+#         "../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms_normalize0_1_correctionKR_forNormalize0_1/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR.cool"
+#     shell:
+#         "hicCorrectMatrix correct -m {input} --correctionMethod KR --outFileName {output}"
+#
+# rule hicFindTADs_for_Normalize0_1:
+#     input:
+#         "../data/home_data_V2_normalizeSmallest_normalize0_1/combined_cool_10k_targetChroms_normalize0_1_correctionKR_forNormalize0_1/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR.cool"
+#     output:
+#         "../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_boundaries.bed",
+#         "../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_boundaries.gff",
+#         "../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_domains.bed",
+#         "../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_score.bedgraph",
+#         "../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_tad_score.bm",
+#         "../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}_zscore_matrix.cool"
+#     params:
+#         prefix='../results/home_data_V2_normalizeSmallest_normalize0_1_results/{sample}_combined_10000_targetChroms_normalize0_1_correctionKR_min30k_max100k_step10k_thresh0.01_delta0.01_dfr/{sample}'
+#     shell:
+#         " hicFindTADs -m {input} --outPrefix {params.prefix} --minDepth 30000 --maxDepth 100000 --step 10000 --thresholdComparisons 0.01 --delta 0.01 --correctForMultipleTesting fdr -p 12"
