@@ -112,12 +112,12 @@ if __name__ == '__main__':
     dest_dir.mkdir(parents=True, exist_ok=True)
 
     # PETcount_thresh = 1
-    merged_loop_countThresh = 5
+    merged_loop_countThresh = 1
     # merged_loop_span_thresh = 500000
 
 
-    Domain_PETcount_thresh_inter_active = 10
-    Domain_distance_thresh_inter_active = 1000000
+    Domain_PETcount_thresh_inter_active = 0
+    Domain_distance_thresh_inter_active = 1000000000
 
     # num_list = [['01', '02', '#4D7731', '#98A246'], ['04', '05', '#F50CB8', '#743CA6'],['07', '08', '#1087F4', '#99BDCB']]
     num_list = [['04', '05', '#F50CB8', '#743CA6'],['07', '08', '#1087F4', '#99BDCB']]
@@ -167,8 +167,8 @@ if __name__ == '__main__':
             header=None, index=None, sep='\t')
 
     #
-    Domain_PETcount_thresh_inter_inactive = 10
-    Domain_distance_thresh_inter_inactive = 1000000
+    Domain_PETcount_thresh_inter_inactive = 0
+    Domain_distance_thresh_inter_inactive = 1000000000
 
     num_list = [['01', '02', '#4D7731', '#98A246']]
     for num_pair in num_list:

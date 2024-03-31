@@ -102,25 +102,25 @@ if __name__ == '__main__':
     dest_dir = root.parent / 'results' / '10_DEG_and_compartments'
     dest_dir.mkdir(parents=True, exist_ok=True)
 
-    TPM_thresh = 1
+    TPM_thresh = 0
     FC_thresh = 1
-    FDR_thresh = 0.001
+    FDR_thresh = 0.01
     promoter_extension = 2000
     #
-    # bin_size = 10000
-    # intersected_A = pd.read_csv(anno_dir / f'intersected_A_addID_resolution{bin_size}.bed', header=None, sep='\t')
-    # intersected_A.columns = ['chromosome', 'start', 'end', 'ID']
-    # # print(intersected_A.shape)
-    # # print(intersected_A.head())
-    # intersected_B = pd.read_csv(anno_dir / f'intersected_B_addID_resolution{bin_size}.bed', header=None, sep='\t')
-    # intersected_B.columns = ['chromosome', 'start', 'end', 'ID']
-    # # print(intersected_B.shape)
-    # # print(intersected_B.head())
-    # ChIP = stack_and_sort_dataframes(intersected_A, intersected_B)
-    # # print(ChIP.shape)
-    # # print(ChIP.head())
-    # # ChIP.to_csv(anno_dir / f'stacked_A_B_compartments_addID_resolution10000.bed', index=None, sep='\t')
-    #
+    bin_size = 10000
+    intersected_A = pd.read_csv(anno_dir / f'intersected_A_addID_resolution{bin_size}.bed', header=None, sep='\t')
+    intersected_A.columns = ['chromosome', 'start', 'end', 'ID']
+    # print(intersected_A.shape)
+    # print(intersected_A.head())
+    intersected_B = pd.read_csv(anno_dir / f'intersected_B_addID_resolution{bin_size}.bed', header=None, sep='\t')
+    intersected_B.columns = ['chromosome', 'start', 'end', 'ID']
+    # print(intersected_B.shape)
+    # print(intersected_B.head())
+    ChIP = stack_and_sort_dataframes(intersected_A, intersected_B)
+    # print(ChIP.shape)
+    # print(ChIP.head())
+    # ChIP.to_csv(anno_dir / f'stacked_A_B_compartments_addID_resolution10000.bed', index=None, sep='\t')
+
     # all_genes = pd.read_csv(src_dir / f'1_annotated_all_genes_using_dm3_ref_withHighestIsoform_inWT.txt', sep='\t')
     # print(all_genes.shape)
     # print(all_genes.head())
@@ -134,16 +134,18 @@ if __name__ == '__main__':
     # print(all_genes_addPromoter_addType_addCompartment.shape)
     # # print(all_genes_addPromoter_addType_addCompartment.head(1000))
     # all_genes_addPromoter_addType_addCompartment.to_csv(dest_dir / f'all_genes_addPromoter{promoter_extension}_addType_TPMthresh{TPM_thresh}_FC{FC_thresh}_FDR{FDR_thresh}_addCompartment.txt', index=None, sep='\t')
-
+    #
     DEGs_addID = pd.read_csv(dest_dir / f'all_genes_addPromoter{promoter_extension}_addType_TPMthresh{TPM_thresh}_FC{FC_thresh}_FDR{FDR_thresh}_addCompartment.txt', sep='\t')
     # print(DEGs_addID.shape)
     # print(DEGs_addID.head(100))
     DEGs_addID_addAB = add_ab_column(DEGs_addID)
     print(DEGs_addID_addAB.shape)
-    print(DEGs_addID_addAB.head(100))
+    print(DEGs_addID_addAB.head())
 
     statistical_table = pd.crosstab(DEGs_addID_addAB['expression_type'], DEGs_addID_addAB['AB'])
     print(statistical_table)
+
+
 
 
 

@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     PETcount_thresh = 1
 
-    merged_loop_countThresh = 2
+    merged_loop_countThresh = 1
     # merged_loop_span_thresh = 500000
 
 

@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
     PETcount_thresh = 1
     # loop_span_thresh = 500000
-    scatterPlot_PETthresh = 2 
+    scatterPlot_PETthresh = 5
 
 
 

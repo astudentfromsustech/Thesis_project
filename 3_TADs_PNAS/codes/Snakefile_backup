@@ -1,0 +1,25 @@
+samples = ['WT', 'HS']
+# samples = ['HS']
+# pair_nums = [10000000, 20000000, 40000000, 60000000, 80000000, 100000000]
+pair_nums = [20000000, 40000000, 60000000, 80000000, 100000000]
+rule all:
+    input:
+        expand("../data/pairs_downsample/{sample}_combined_PNAS.pairs_dn{pair_num}.gz", sample=samples, pair_num=pair_nums),
+        expand("../data/combined_hic_downsample/{sample}_combined_PNAS.pairs_dn{pair_num}.hic", sample=samples, pair_num=pair_nums),
+
+rule downsample_pair:
+    input:
+        "../data/pairs/{sample}_combined_PNAS.pairs.gz"
+    output:
+        "../data/pairs_downsample/{sample}_combined_PNAS.pairs_dn{pair_num}.gz"
+    shell:
+        "zgrep -v '^#' {input} | shuf -n {wildcards.pair_num} | pigz > {output}"
+
+rule produce_hic:
+    input:
+        "../data/pairs_downsample/{sample}_combined_PNAS.pairs_dn{pair_num}.gz"
+    output:
+        "../data/combined_hic_downsample/{sample}_combined_PNAS.pairs_dn{pair_num}.hic"
+    shell:
+        " java -Xmx12g -jar /mnt/e/ChIA-PIPE/chiapipe/pipeline_development/softwares/juicer_tools_1.19.01.jar pre -r 2500000,100000,500000,250000,100000,50000,25000,10000,5000,1000 {input} {output} dm3"
+

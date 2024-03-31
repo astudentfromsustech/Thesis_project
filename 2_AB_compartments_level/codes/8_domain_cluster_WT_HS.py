@@ -125,7 +125,7 @@ if __name__ == '__main__':
 
     unique_PET_dir = {'01': 11754993, '02': 12475429, '04': 15846412, '05': 15597158, '07': 15807711, '08': 15270275}
 
-    Domain_PETcount_thresh_inter_active = 10
+    Domain_PETcount_thresh_inter_active = 5
     Domain_distance_thresh_inter_active = 1000000
 
     # num_list = [['01', '02', '#4D7731', '#98A246'], ['04', '05', '#F50CB8', '#743CA6'],['07', '08', '#1087F4', '#99BDCB']]
@@ -195,7 +195,7 @@ if __name__ == '__main__':
             dest_dir / f'CDS0{HS_num}0D_inter_A_cluster_Merged_loop_countThresh{merged_loop_countThresh}_Domain_PETcount{Domain_PETcount_thresh_inter_active}_Domain_distance{Domain_distance_thresh_inter_active}',
             index=None, sep='\t')
 
-    Domain_PETcount_thresh_inter_inactive = 10
+    Domain_PETcount_thresh_inter_inactive = 5
     Domain_distance_thresh_inter_inactive = 1000000
 
     num_list = [['01', '02', '#4D7731', '#98A246']]

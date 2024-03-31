@@ -1,0 +1,27 @@
+samples = ['WT', 'HS']
+# chro_list=['2L', '2R', '3L', '3R', 'X']
+chro_list=['2L']
+path_to_juicer_tool='/mnt/e/juicer_tools/juicer_tools.jar'
+
+rule all:
+    input:
+#         expand("../results/results_combined_data/pearson_correlation_matrix_chr{chro}_5k_KR_called_by_juicer_tools/{sample}_combined_pearson_chr{chro}_5k_KR.txt", sample=samples, chro=chro_list),
+        expand("../results/results_combined_data/eigen_vector_chr{chro}_5k_KR_called_by_juicer_tools/{sample}_combined_eigen_chr{chro}_5k_KR.txt", sample=samples, chro=chro_list)
+
+
+# rule pearson_correlation_matrix_calling:
+#     input:
+#         "../data/combined_hic/{sample}_combined_PNAS.hic"
+#     output:
+#         "../results/results_combined_data/pearson_correlation_matrix_chr{chro}_5k_KR_called_by_juicer_tools/{sample}_combined_pearson_chr{chro}_5k_KR.txt"
+#     shell:
+#         "java -jar {path_to_juicer_tool} pearsons KR {input} {wildcards.chro} BP 5000 {output} -p"
+
+rule eigen_vector_calling:
+    input:
+        "../data/combined_hic/{sample}_combined_PNAS.hic"
+    output:
+        "../results/results_combined_data/eigen_vector_chr{chro}_5k_KR_called_by_juicer_tools/{sample}_combined_eigen_chr{chro}_5k_KR.txt"
+    shell:
+        "java -jar {path_to_juicer_tool} eigenvector KR {input} {wildcards.chro} BP 5000 {output} -p"
+
